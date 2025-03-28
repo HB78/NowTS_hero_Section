@@ -1,5 +1,6 @@
 "use client";
 
+import Orb from "@/component/Orb/Orb";
 import {
   betterauth,
   next,
@@ -11,13 +12,7 @@ import {
   stripe,
   tailwind,
 } from "@/lib/index";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-
-const Orb = dynamic(() => import("@/component/Orb/Orb"), {
-  ssr: false,
-  loading: () => <OrbSkeleton />,
-});
 
 // Composant Skeleton pour remplacer l'Orb pendant le chargement
 const OrbSkeleton = ({ width, height }) => {

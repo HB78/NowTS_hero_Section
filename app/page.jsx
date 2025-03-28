@@ -1,6 +1,7 @@
 import { HeroBackground } from "@/component/heroBackground/HeroBackground";
 import OrbGroup from "@/component/OrbGroup/OrbGroup";
 import { Rocket } from "lucide-react";
+import { AnimatedText } from "../component/AnimatedText/AnimatedText";
 import GradientText from "../component/GradientText/GradientText";
 import Header from "../component/Header";
 import ShinyText from "../component/ShinyText/ShinyText";
@@ -30,16 +31,21 @@ export default function Home() {
                 className="text-sm border border-orange-200 p-3 rounded-full text-orange-300 whitespace-nowrap overflow-hidden animate-shine"
               />
             </div>
-            <h1 className="p-3 font-caption scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl !leading-tight max-sm:text-3xl max-lg:text-center">
-              Transforme ton idée en application de{" "}
-              <span className="text-yellow-500 rounded-2xl">PRO,</span> <br />{" "}
-              <span className="italic">Quelle que soit ton expérience</span>
-            </h1>
-            <h2 className="text-lg text-muted-foreground font-normal text-gray-300 p-3 max-lg:text-center">
-              De l'idée à l'implémentation, NOW.TS t'accompagne. Profite d'une
-              world-class <br /> template adapté à l'IA avec une formation pour
-              t'aider à déployer ton application.
-            </h2>
+            <AnimatedText delay={0.2}>
+              <h1 className="p-3 font-caption scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl !leading-tight max-sm:text-3xl max-lg:text-center">
+                Transforme ton idée en application de{" "}
+                <span className="text-yellow-500 rounded-2xl">PRO,</span> <br />{" "}
+                <span className="italic">Quelle que soit ton expérience</span>
+              </h1>
+            </AnimatedText>
+            <AnimatedText delay={0.4}>
+              <h2 className="text-lg text-muted-foreground font-normal text-gray-300 p-3 max-lg:text-center">
+                De l'idée à l'implémentation, NOW.TS t'accompagne. Profite d'une
+                world-class <br /> template adapté à l'IA avec une formation
+                pour t'aider à déployer ton application.
+              </h2>
+            </AnimatedText>
+            s
             <GradientText
               colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
               animationSpeed={7}
