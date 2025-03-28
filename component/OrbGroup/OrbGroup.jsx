@@ -1,4 +1,5 @@
 "use client";
+
 import Orb from "@/component/Orb/Orb";
 import {
   betterauth,
@@ -28,11 +29,12 @@ const OrbSkeleton = ({ width, height }) => {
 const OrbGroup = () => {
   const [imagesLoaded, setImagesLoaded] = useState({});
   const [imagesError, setImagesError] = useState({});
+  const [isDesktop, setIsDesktop] = useState(true);
 
   // Configuration du cercle
-  const centerSize = 150; // Taille de l'orbe centrale (si vous en voulez une)
-  const orbitRadius = 150; // Rayon du cercle d'orbes
-  const orbSize = 100; // Taille de chaque orbe
+  const centerSize = isDesktop ? 130 : 100; // Taille de l'orbe centrale (si vous en voulez une)
+  const orbitRadius = isDesktop ? 130 : 100; // Rayon du cercle d'orbes
+  const orbSize = isDesktop ? 100 : 70; // Taille de chaque orbe
 
   // Liste des logos
   const logos = [
@@ -67,6 +69,17 @@ const OrbGroup = () => {
       };
       img.src = logo.src;
     });
+  }, []);
+
+  useEffect(() => {
+    const checkSize = () => {
+      setIsDesktop(window.innerWidth >= 768); // Si la largeur est supérieure ou égale à 768px
+    };
+
+    checkSize(); // Vérification initiale
+    window.addEventListener("resize", checkSize); // Mise à jour lors du redimensionnement
+
+    return () => window.removeEventListener("resize", checkSize); // Cleanup
   }, []);
 
   return (

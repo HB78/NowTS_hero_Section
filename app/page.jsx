@@ -53,7 +53,7 @@ export default function Home() {
             </GradientText>
             <div className="flex justify-center items-center ml-3 text-lg gap-1 font-medium text-green-400 italic min-lg:justify-start">
               <p className="none rounded-full bg-green-400 animate-pulse min-lg:h-6 min-lg:w-6"></p>
-              <p className="text-md min-lg:text-xl">
+              <p className="text-sm min-lg:text-xl w-full">
                 -203€ pour les 740 premiers membres. (plus que 5 places
                 restantes)
               </p>
