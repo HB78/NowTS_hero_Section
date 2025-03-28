@@ -16,7 +16,7 @@ export default function Home() {
       <main className="w-full h-full relative p-5 flex flex-col">
         <section className="flex flex-col items-center justify-between h-[90%] w-full min-lg:flex-row">
           <article className="flex-1 min-lg:max-w-[60%] w-full">
-            <div className="flex gap-6 flex-col text-center justify-center ml-3 min-lg:gap-3 min-lg:justify-start min-lg:flex-row">
+            <div className="flex gap-6 flex-col text-center justify-center mx-3 min-lg:gap-3 min-lg:justify-start min-lg:flex-row">
               <ShinyText
                 text="Mise à jour vers Next.js 15"
                 disabled={false}
