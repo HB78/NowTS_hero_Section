@@ -1,33 +1,17 @@
-// "use client";
-// import { useEffect, useState } from "react";
-// import Lightning from "./../Lightning/Lightning";
-// import { HeroMobileEffect } from "./HeroMobileEffect";
+"use client";
 
-// const HeroBackground = () => {
-//   const [isDesktop, setIsDesktop] = useState(true);
+import dynamic from "next/dynamic";
 
-//   useEffect(() => {
-//     const checkSize = () => {
-//       setIsDesktop(window.innerWidth >= 768); // Si la largeur est supérieure ou égale à 768px
-//     };
+const HeroMobileEffect = dynamic(
+  () => import("./HeroMobileEffect").then((mod) => mod.HeroMobileEffect),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-screen bg-gradient-to-b from-black/10 to-black/30"></div>
+    ),
+  }
+);
 
-//     checkSize(); // Vérification initiale
-//     window.addEventListener("resize", checkSize); // Mise à jour lors du redimensionnement
-
-//     return () => window.removeEventListener("resize", checkSize); // Cleanup
-//   }, []);
-
-//   return (
-//     <>
-//       {isDesktop ? (
-//         <Lightning />
-//       ) : (
-//         <div className="w-full h-screen absolute">
-//           <HeroMobileEffect />
-//         </div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default HeroBackground;
+export function HeroBackground() {
+  return <HeroMobileEffect />;
+}

@@ -1,27 +1,17 @@
+import { HeroBackground } from "@/component/heroBackground/HeroBackground";
 import OrbGroup from "@/component/OrbGroup/OrbGroup";
 import { Rocket } from "lucide-react";
-import dynamic from "next/dynamic";
 import GradientText from "../component/GradientText/GradientText";
 import Header from "../component/Header";
 import ShinyText from "../component/ShinyText/ShinyText";
 import { Tooltip } from "../component/tolltip/Tooltip";
-
-const HeroMobileEffect = dynamic(
-  () =>
-    import("../component/heroBackground/HeroMobileEffect").then(
-      (mod) => mod.HeroMobileEffect
-    ),
-  {
-    ssr: false, // Désactive le rendu côté serveur
-  }
-);
 
 export default function Home() {
   return (
     <div className="h-screen w-full">
       <Header />
       <div className="w-full h-screen absolute">
-        <HeroMobileEffect />{" "}
+        <HeroBackground />{" "}
       </div>
       <main className="w-full h-full relative p-5 flex flex-col">
         <section className="flex flex-col items-center justify-between h-[90%] w-full min-lg:flex-row">
