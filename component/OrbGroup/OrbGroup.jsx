@@ -32,8 +32,8 @@ const OrbGroup = () => {
   const [isDesktop, setIsDesktop] = useState(true);
 
   // Configuration du cercle
-  const centerSize = isDesktop ? 130 : 100; // Taille de l'orbe centrale (si vous en voulez une)
-  const orbitRadius = isDesktop ? 130 : 100; // Rayon du cercle d'orbes
+  const centerSize = isDesktop ? 160 : 100; // Taille de l'orbe centrale (si vous en voulez une)
+  const orbitRadius = isDesktop ? 160 : 100; // Rayon du cercle d'orbes
   const orbSize = isDesktop ? 100 : 70; // Taille de chaque orbe
 
   // Liste des logos
@@ -84,7 +84,7 @@ const OrbGroup = () => {
 
   return (
     <article
-      className="flex-none relative max-lg:mt-9"
+      className="flex-none relative max-lg:mt-6"
       style={{
         width: `${2 * (orbitRadius + orbSize)}px`,
         height: `${2 * (orbitRadius + orbSize)}px`,

@@ -272,7 +272,7 @@ const GooeyNav = ({
           }
         `}
       </style>
-      <div className="relative" ref={containerRef}>
+      <div className="relative text-sm min-lg:text-base" ref={containerRef}>
         <nav
           className="flex relative"
           style={{ transform: "translate3d(0,0,0.01px)" }}

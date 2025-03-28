@@ -13,19 +13,12 @@ const items = [
 const Header = () => {
   return (
     <header className="flex flex-col items-center justify-evenly mt-3 min-lg:flex-row">
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-3">
         {" "}
-        <Image
-          src={logo}
-          alt="Logo"
-          width={24}
-          height={24}
-          priority
-          className=""
-        />
-        <p className="text-yellow-500 text-xl font-bold ml-3 max-lg:mb-3">
-          NOW.TS
-        </p>
+        <div>
+          <Image src={logo} alt="Logo" width={24} height={24} priority />
+        </div>
+        <p className="text-yellow-500 text-xl font-bold max-lg:mb-3">NOW.TS</p>
       </div>
       <GoeyNav
         items={items}
