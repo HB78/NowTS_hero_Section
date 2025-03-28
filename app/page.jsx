@@ -1,20 +1,32 @@
 import OrbGroup from "@/component/OrbGroup/OrbGroup";
 import { Rocket } from "lucide-react";
+import dynamic from "next/dynamic";
 import GradientText from "../component/GradientText/GradientText";
 import Header from "../component/Header";
-import HeroBackground from "../component/heroBackground/HeroBackground";
 import ShinyText from "../component/ShinyText/ShinyText";
 import { Tooltip } from "../component/tolltip/Tooltip";
+
+const HeroMobileEffect = dynamic(
+  () =>
+    import("../component/heroBackground/HeroMobileEffect").then(
+      (mod) => mod.HeroMobileEffect
+    ),
+  {
+    ssr: false, // Désactive le rendu côté serveur
+  }
+);
 
 export default function Home() {
   return (
     <div className="h-screen w-full">
       <Header />
-      <HeroBackground />
+      <div className="w-full h-screen absolute">
+        <HeroMobileEffect />{" "}
+      </div>
       <main className="w-full h-full relative p-5 flex flex-col">
         <section className="flex flex-col items-center justify-between h-[90%] w-full min-lg:flex-row">
           <article className="flex-1 min-lg:max-w-[60%] w-full">
-            <div className="flex justify-center ml-3 min-lg:gap-3 min-lg:justify-start ">
+            <div className="flex gap-6 flex-col text-center justify-center ml-3 min-lg:gap-3 min-lg:justify-start min-lg:flex-row">
               <ShinyText
                 text="Mise à jour vers Next.js 15"
                 disabled={false}
