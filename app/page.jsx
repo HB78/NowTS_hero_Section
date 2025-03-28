@@ -45,7 +45,7 @@ export default function Home() {
                 pour t'aider à déployer ton application.
               </h2>
             </AnimatedText>
-            s
+
             <GradientText
               colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
               animationSpeed={7}
